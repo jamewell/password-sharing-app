@@ -30,7 +30,7 @@ class PasswordShare extends Model
         'expires_at' => 'datetime',
     ];
 
-    protected function isExpired(): bool
+    public function isExpired(): bool
     {
         return $this->expires_at->isPast() || $this->remaining_uses <= 0;
     }

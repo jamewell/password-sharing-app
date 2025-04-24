@@ -6,6 +6,7 @@ use App\Enums\ExpirationTime;
 use App\Enums\MaxUses;
 use App\Models\PasswordShare;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Validation\Rules\Enum;
 use Livewire\Component;
 
@@ -58,6 +59,12 @@ class PasswordShareForm extends Component
         $passwordShare->expires_at = now()->addMinutes($this->expiration_time);
 
         $passwordShare->save();
+
+        $this->generatedUrl = URL::temporarySignedRoute(
+            'password.show',
+            now()->addMinutes($this->expiration_time),
+            ['id' => $passwordShare->id]
+        );
 
         $this->reset(['password']);
     }
