@@ -1,7 +1,6 @@
 <?php
 
+use App\Http\Controllers\PasswordShareController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [PasswordShareController::class, 'create'])->name('password.create');

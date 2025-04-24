@@ -10,7 +10,7 @@ enum ExpirationTime: int
     case TWELVE_HOURS = 720;
     case ONE_DAY = 1440;
 
-    public function label(): string
+    public function text(): string
     {
         return match ($this) {
             self::THIRTY_MINUTES => '30 Minutes',
@@ -21,8 +21,32 @@ enum ExpirationTime: int
         };
     }
 
-    public static function values(): array
+    /**
+     * @return array<int, array<string, int|string>>
+     */
+    public static function label(): array
     {
-        return array_column(self::cases(), 'value');
+        return [
+            [
+                'value' => self::THIRTY_MINUTES->value,
+                'label' => '30 Minutes',
+            ],
+            [
+                'value' => self::ONE_HOUR->value,
+                'label' => '1 Hour',
+            ],
+            [
+                'value' => self::SIX_HOURS->value,
+                'label' => '6 Hours',
+            ],
+            [
+                'value' => self::TWELVE_HOURS->value,
+                'label' => '12 Hours',
+            ],
+            [
+                'value' => self::ONE_DAY->value,
+                'label' => '24 Hours',
+            ],
+        ];
     }
 }

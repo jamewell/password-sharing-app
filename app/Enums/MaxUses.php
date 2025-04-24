@@ -15,6 +15,9 @@ enum MaxUses: int
         return (string) $this->value;
     }
 
+    /**
+     * @return array<int, int>
+     */
     public static function values(): array
     {
         return array_column(self::cases(), 'value');
