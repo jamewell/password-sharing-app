@@ -71,15 +71,17 @@ Follow these steps to set up the project locally:
   ```bash
   ddev phpstan
   ```
-  You can add the missing command to the **Development Commands** section of the `README.md` file as follows:
 
+- **Run PHPUnit (Unit Tests)**
+  ```bash
+  ddev artisan test
+  ```
 
 - **Run Password Cleanup (Remove Expired Passwords)**
   ```bash
   ddev artisan shared-passwords:cleanup
   ```
-
-This ensures users know how to execute the cleanup command for expired password shares.
+  This ensures users know how to execute the cleanup command for expired password shares.
 
 ---
 
