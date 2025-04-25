@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Carbon;
 
@@ -15,6 +16,8 @@ use Illuminate\Support\Carbon;
  */
 class PasswordShare extends Model
 {
+    /* @phpstan-ignore-next-line */
+    use HasFactory;
     use HasUuids;
 
     protected $fillable = [
