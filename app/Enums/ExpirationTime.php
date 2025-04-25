@@ -29,23 +29,23 @@ enum ExpirationTime: int
         return [
             [
                 'value' => self::THIRTY_MINUTES->value,
-                'label' => '30 Minutes',
+                'label' => self::THIRTY_MINUTES->text(),
             ],
             [
                 'value' => self::ONE_HOUR->value,
-                'label' => '1 Hour',
+                'label' => self::ONE_HOUR->text(),
             ],
             [
                 'value' => self::SIX_HOURS->value,
-                'label' => '6 Hours',
+                'label' => self::SIX_HOURS->text(),
             ],
             [
                 'value' => self::TWELVE_HOURS->value,
-                'label' => '12 Hours',
+                'label' => self::TWELVE_HOURS->text(),
             ],
             [
                 'value' => self::ONE_DAY->value,
-                'label' => '24 Hours',
+                'label' => self::ONE_DAY->text(),
             ],
         ];
     }
